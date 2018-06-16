@@ -380,12 +380,6 @@ static int tz_get_target_freq(struct devfreq *devfreq, unsigned long *freq,
  		return 0;
  	}
 #endif
- 
-	if (suspended || !display_on) {
-		*freq = devfreq->profile->freq_table[devfreq->profile->max_state - 1];
-		return 0;
-	}
-
  	priv->bin.total_time += stats.total_time;
  	priv->bin.busy_time += stats.busy_time;
 
